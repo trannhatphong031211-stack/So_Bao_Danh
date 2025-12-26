@@ -11,16 +11,16 @@ body {
 
 .header {
     background: linear-gradient(#4a90e2);
-    color: white;
+    color: #ffff;
     padding: 40px ;
 }
 
-.header-content {
+.tungtungtung {
     display: flex;
     align-items: center;
 }
 
-.logo {
+.img {
     width: 60px;
     margin-right: 20px;
 }
@@ -28,26 +28,22 @@ body {
 .title h2 { font-size: 1.2rem; font-weight: 400; }
 .title h1 { font-size: 1.8rem; font-weight: bold; }
 
-.main-body {
+.skibidi {
     max-width: 1000px;
     margin: -30px auto 0;
-    background: white;
+    background: #ffff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding: 40px;
 }
 
-.content-wrapper {
+.toilet {
     display: flex;
     gap: 50px;
 }
 
-.login-section, .info-section {
-    flex: 1;
-}
-
-.divider {
+.dangnhap, .thongtin {
     width: 1px;
-    background-color: #eee;
+    flex: 1;
 }
 
 h3 {
@@ -56,20 +52,20 @@ h3 {
     font-size: 1.1rem;
 }
 
-.input-group {
+.hihihahahuhu {
     margin-bottom: 15px;
 }
 
-.input-group label {
+.hihihahahuhu label {
     display: block;
     font-size: 0.85rem;
     margin-bottom: 5px;
     color: #555;
 }
 
-.required { color: red; }
+.none { color: #ff0000; }
 
-input[type="text"], input[type="password"] {
+input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -77,21 +73,12 @@ input[type="text"], input[type="password"] {
     outline: none;
 }
 
-.password-wrapper { position: relative; }
+.matkhau { position: relative; }
 
-.forgot-link {
-    display: block;
-    font-size: 0.85rem;
-    color: #1557c0;
-    text-decoration: none;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.btn-primary {
+.nutbam {
     width: 100%;
     background-color: #0b50bc;
-    color: white;
+    color: #ffff;
     padding: 12px;
     border: none;
     border-radius: 5px;
@@ -100,7 +87,7 @@ input[type="text"], input[type="password"] {
     margin-bottom: 10px;
 }
 
-.info-section p {
+.thongtin p {
     font-size: 0.9rem;
     line-height: 1.6;
     color: #666;
