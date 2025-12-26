@@ -61,22 +61,3 @@ input {
     background-color: #003cff;
     color: #ffff;
 }
-
-.query {
-    margin: 20px 0;
-}
-
-.query p {
-    margin-top: 10px;
-    font-weight: 400;
-}
-
-.query a {
-    text-decoration: none;
-    color: #003cff;
-}
-
-.query a:hover {
-    text-decoration: underline;
-    font-weight: 1000;
-}
