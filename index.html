@@ -16,8 +16,8 @@
                     <h1>KỲ THI TỐT NGHIỆP THPT</h1>
                 </div>
             </div>
-            <div>
-                <button><a href="main.html">Quản Lí</a></button>
+            <div class="query">
+                <p><a href="main.html">Quản Trị Viên</a></p>
             </div>
         </header>
 
@@ -28,16 +28,15 @@
                     <form>
                         <div class="hihihahahuhu">
                             <label>Số CCCD/CMND/ĐDCN <span class="none">(*)</span></label>
-                            <input type="text" placeholder="Số CCCD/CMND/ĐDCN">
+                            <input type="text" placeholder="Số CCCD/CMND/ĐDCN" class="skibidiSoBaoDanh">
                         </div>
 
                         <div class="hihihahahuhu">
                             <label>Số báo danh <span class="none">(*)</span></label>
                             <div class="matkhau">
-                                <input type="password" placeholder="Số báo danh">
+                                <input type="password" placeholder="Số báo danh" class="skibidiMatKhau">
                             </div>
                         </div>
-
                         <button type="submit" class="nutbam">Đăng nhập</button>
                     </form>
                 </section>
@@ -49,5 +48,47 @@
             </div>
         </main>
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBD7b3JnP_K3XQyv37mSPzDHDc1Sb795lM",
+            authDomain: "jsi-33.firebaseapp.com",
+            projectId: "jsi-33",
+            storageBucket: "jsi-33.firebasestorage.app",
+            messagingSenderId: "125271951640",
+            appId: "1:125271951640:web:f7d2d98480b63617c7b66d",
+            measurementId: "G-TQZ71XNJX2"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const getauth = getAuth(app);
+
+        const skibidi = document.querySelector(".btnlogin");
+        function handleLogin() {
+            const skibidiSoBaoDanh = document.querySelector(".skibidiSoBaoDanh").value;
+            const skibidiMatKhau = document.querySelector(".skibidiMatKhau").value;
+
+            signInWithEmailAndPassword(getauth, skibidiSoBaoDanh, skibidiMatKhau)
+                .then((item) => {
+                    console.log(item);
+                    alert("Complete login");
+                    window.location.href = 'index.html'
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                })
+        }
+        skibidi.addEventListener("click", handleLogin)
+    </script>
 </body>
 </html>
