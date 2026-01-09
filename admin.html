@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Skibidi</title>
+    <link rel="stylesheet" href="./assets/css/admin.css">
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <header class="header">
+            <h1>Admin Skibidi</h1>
+        </header>
+
+        <main class="skibidi">
+            <section class="dangnhap">
+                <h3>NHẬP DỮ LIỆU THÍ SINH</h3>
+
+                <form id="adminForm">
+                    <div class="hihihahahuhu">
+                        <label>CCCD</label>
+                        <input type="text" id="cccd" required>
+                    </div>
+
+                    <div class="hihihahahuhu">
+                        <label>Số báo danh</label>
+                        <input type="text" id="sbd" required>
+                    </div>
+
+                    <div class="hihihahahuhu">
+                        <label>Họ và tên</label>
+                        <input type="text" id="hoten" required>
+                    </div>
+
+                    <div class="hihihahahuhu">
+                        <label>Ngữ văn</label>
+                        <input type="number" id="van" required>
+                    </div>
+
+                    <div class="hihihahahuhu">
+                        <label>Toán</label>
+                        <input type="number" id="toan" required>
+                    </div>
+
+                    <div class="hihihahahuhu">
+                        <label>Tiếng Anh</label>
+                        <input type="number" id="anh" required>
+                    </div>
+
+                    <button type="submit" class="nutbam">LƯU DỮ LIỆU</button>
+
+                    <div class="query">
+                        <p><a href="index.html">Return</a></p>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBD7b3JnP_K3XQyv37mSPzDHDc1Sb795lM",
+            authDomain: "jsi-33.firebaseapp.com",
+            projectId: "jsi-33",
+            storageBucket: "jsi-33.firebasestorage.app",
+            messagingSenderId: "125271951640",
+            appId: "1:125271951640:web:f7d2d98480b63617c7b66d"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById("adminForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            try {
+                await addDoc(collection(db, "skibidi"), {
+                    cccd: document.getElementById("cccd").value.trim(),
+                    sbd: document.getElementById("sbd").value.trim(),
+                    nemchua: document.getElementById("hoten").value.trim(),
+                    tiengviet: Number(document.getElementById("van").value),
+                    toan: Number(document.getElementById("toan").value),
+                    english: Number(document.getElementById("anh").value),
+                    createdAt: serverTimestamp()
+                });
+
+                alert("Đã lưu dữ liệu thành công");
+                e.target.reset();
+
+            } catch (err) {
+                console.error(err);
+                alert("Lỗi ghi dữ liệu Firestore");
+            }
+        });
+    </script>
+
 </body>
+
 </html>
