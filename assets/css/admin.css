@@ -68,3 +68,54 @@ body {
     font-size: 15px;
     font-weight: bold;
 }
+
+.toilet {
+    display: flex;
+    gap: 10px;
+}
+
+.toilet .hihihahahuhu {
+    flex: 1;
+}
+
+.crud-skibidi {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.crud-skibidi th,
+.crud-skibidi td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.crud-skibidi th {
+    background-color: #0b50bc;
+    color: white;
+}
+
+.btn-edit {
+    background: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.query {
+    margin-top: 30px;
+    text-align: center;
+}
