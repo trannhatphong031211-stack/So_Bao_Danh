@@ -119,3 +119,7 @@ body {
     margin-top: 30px;
     text-align: center;
 }
+
+input:focus {
+    outline: none;
+}
